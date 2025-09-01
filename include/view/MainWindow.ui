@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui version="4.0">
+  <class>MainWindow</class>
+  <widget class="QMainWindow" name="MainWindow">
+    <property name="geometry">
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1000</width>
+        <height>700</height>
+      </rect>
+    </property>
+    <property name="windowTitle">
+      <string>Parachute Encoder</string>
+    </property>
+
+    <!-- Central Widget -->
+    <widget class="QWidget" name="centralwidget">
+      <layout class="QHBoxLayout" name="mainLayout">
+
+        <!-- Left Layout -->
+        <item>
+<layout class="QVBoxLayout" name="leftLayout">
+  <property name="spacing">
+    <number>0</number>
+  </property>
+
+  <!-- Message input -->
+  <item>
+<layout class="QHBoxLayout" name="messageLayout">
+  <property name="spacing">
+    <number>8</number> 
+  </property>
+  <item>
+    <widget class="QLineEdit" name="messageInput"/>
+  </item>
+  <item>
+    <widget class="QPushButton" name="randomButton">
+      <property name="text">
+        <string>RANDOM</string>
+      </property>
+    </widget>
+  </item>
+</layout>
+</item>
+
+
+  <!-- Sectors Row -->
+  <item>
+    <layout class="QHBoxLayout" name="sectorsRow">
+      <property name="spacing">
+        <number>4</number>
+      </property>
+      <item>
+        <widget class="QLabel" name="labelSectors">
+          <property name="text">
+            <string>Sectors:</string>
+          </property>
+          <property name="styleSheet">
+            <string notr="true">margin: 0px; padding: 0px;</string>
+          </property>
+          <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed"/>
+          </property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QSlider" name="sliderSectors">
+          <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+          </property>
+        </widget>
+      </item>
+      <item>
+<widget class="QSpinBox" name="spinSectors">
+  <property name="minimumSize">
+    <size>
+      <width>60</width>
+      <height>0</height>
+    </size>
+  </property>
+</widget>
+
+      </item>
+    </layout>
+  </item>
+
+  <!-- Tracks Row -->
+  <item>
+    <layout class="QHBoxLayout" name="tracksRow">
+      <property name="spacing">
+        <number>4</number>
+      </property>
+      <item>
+        <widget class="QLabel" name="labelTracks">
+          <property name="text">
+            <string>Rings :</string>
+          </property>
+          <property name="styleSheet">
+            <string notr="true">margin: 0px; padding: 0px;</string>
+          </property>
+          <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed"/>
+          </property>
+        </widget>
+      </item>
+      <item>
+        <widget class="QSlider" name="sliderTracks">
+          <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+          </property>
+        </widget>
+      </item>
+      <item>
+<widget class="QSpinBox" name="spinTracks">
+  <property name="minimumSize">
+    <size>
+      <width>60</width>
+      <height>0</height>
+    </size>
+  </property>
+</widget>
+      </item>
+    </layout>
+  </item>
+
+
+  <item>
+    <widget class="QPushButton" name="colorButton1">
+      <property name="text">
+        <string>Choose Color (The 1 bits)</string>
+      </property>
+    </widget>
+  </item>
+
+  <item>
+    <widget class="QPushButton" name="colorButton2">
+      <property name="text">
+        <string>Choose Color (The 0 bits)</string>
+      </property>
+    </widget>
+  </item>
+
+  <item>
+    <widget class="QPushButton" name="colorRandomButton">
+      <property name="text">
+        <string>Random Colors</string>
+      </property>
+    </widget>
+  </item>
+
+  <item>
+  <layout class="QHBoxLayout" name="offsetLayout">
+    <item>
+      <widget class="QLabel" name="labelOffsetChar">
+        <property name="text">
+          <string>Offset Char:</string>
+        </property>
+      </widget>
+    </item>
+  <item>
+    <widget class="QComboBox" name="comboOffsetChar"></widget>
+  </item>
+  </layout>
+  </item>
+
+</layout>
+
+        </item>
+
+        <!-- Right Layout -->
+        <item>
+          <layout class="QVBoxLayout" name="rightLayout">
+            <item>
+              <widget class="QWidget" name="parachuteViewTab">
+                <property name="minimumSize">
+                  <size>400,300</size>
+                </property>
+              </widget>
+            </item>
+            <item>
+              <widget class="QWidget" name="binaryViewTab">
+                <layout class="QVBoxLayout" name="binaryLayout"/>
+                <property name="minimumSize">
+                  <size>400, 300</size>
+                </property>
+              </widget>
+            </item>
+          </layout>
+        </item>
+
+      </layout>
+    </widget>
+
+    <!-- Menubar -->
+    <widget class="QMenuBar" name="menubar">
+      <widget class="QMenu" name="fileMenu">
+        <property name="title">
+          <string>&amp;File</string>
+        </property>
+        <addaction name="openAction" />
+        <addaction name="saveAction" />
+      </widget>
+<widget class="QMenu" name="viewMenu">
+  <property name="title">
+    <string>&amp;View</string>
+  </property>
+  <addaction name="actionDarkMode"/>
+</widget>
+      <widget class="QMenu" name="languageMenu">
+        <property name="title">
+          <string>Language</string>
+        </property>
+        <addaction name="actionEnglish" />
+        <addaction name="actionfrensh" />
+      </widget>
+      <addaction name="fileMenu" />
+      <addaction name="languageMenu" />
+      <addaction name="viewMenu"/>
+    </widget>
+
+    <!-- Status Bar -->
+    <widget class="QStatusBar" name="statusbar" />
+
+    <!-- Actions -->
+    <action name="saveAction">
+      <property name="text">
+        <string>&amp;Save</string>
+      </property>
+    </action>
+    <action name="openAction">
+      <property name="text">
+        <string>&amp;Open</string>
+      </property>
+    </action>
+    <action name="actionEnglish">
+      <property name="text">
+        <string>English</string>
+      </property>
+    </action>
+    <action name="actionfrensh">
+      <property name="text">
+        <string>French</string>
+      </property>
+    </action>
+
+<action name="actionDarkMode">
+  <property name="text">
+    <string>Dark Mode</string>
+  </property>
+  <property name="checkable">
+    <bool>true</bool>
+  </property>
+  <property name="checked">
+    <bool>true</bool>
+  </property>
+</action>
+  </widget>
+  <resources/>
+  <connections/>
+</ui>
